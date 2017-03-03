@@ -1,0 +1,16 @@
+.carImg{
+	width:100%;
+}
+.carTitle{
+	font-size: 14px;
+	font-weight: bold;
+}
+.carWrapper{
+	margin-bottom:20px;
+}
+.carWrapper button{
+	visibility: hidden;
+}
+.carWrapper:hover button{
+	visibility: visible;
+}
