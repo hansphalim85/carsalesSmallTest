@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<title>Carsales Small Test</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	
+	<link rel="stylesheet" href="assets/css/style.css">
+	
+	<script src="assets/js/script.js"></script>
+<body>
+	<div class="container" ng-app="carList" ng-controller="carCtrl">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1>Carsales Small Test</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="row">
+					<div class="col-sm-12">
+						<h2>Search Result</h2>
+					</div>
+				</div>
+				<div class="row carWrapper" ng-repeat="r in result">
+					<div class="col-xs-12 col-sm-6">
+						<img class="carImg" src="{{r.thumbnail}}" alt="">
+					</div>
+					<div class="col-xs-12 col-sm-6">
+						<div class="carTitle">{{r.title}}</div>
+						<div class="carPrice">{{r.price}}</div>
+						<button ng-click="saveCar($index)" type="button" class="btn btn-success">Save</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="row">
+					<div class="col-sm-12">
+						<h2>Saved Cars</h2>
+					</div>
+				</div>
+				<div class="row carWrapper" ng-repeat="s in savedCars">
+					<div class="col-xs-12 col-sm-6">
+						<img class="carImg" src="{{s.thumbnail}}" alt="">
+					</div>
+					<div class="col-xs-12 col-sm-6">
+						<div class="carTitle">{{s.title}}-{{$index}}</div>
+						<div class="carPrice">{{s.price}}</div>
+						<button ng-click="removeCar($index)" type="button" class="btn btn-danger">Remove</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
